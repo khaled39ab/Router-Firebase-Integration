@@ -86,7 +86,7 @@ const LogIn = () => {
                 <hr />
             </Form>
             <div className='create-btn-sec'>
-                <Link to={'/signUp'}>
+                <Link to={'/register'}>
                     <Button>
                         Create An Account
                     </Button>
