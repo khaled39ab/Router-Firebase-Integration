@@ -3,7 +3,6 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Register.css'
 
-
 const Register = () => {
     const [validated, setValidated] = useState(false);
 
