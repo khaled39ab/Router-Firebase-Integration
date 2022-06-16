@@ -1,9 +1,11 @@
 import React from 'react';
+import useFirebase from '../../hooks/useFirebase';
 import logo from '../../logo.svg'
 import CustomLink from '../CustomLink/CustomLink';
 import './Header.css'
 
 const Header = () => {
+    const {user, handleSignOut} = useFirebase()
     return (
         <nav>
             <div className='logo-name'>
@@ -15,7 +17,11 @@ const Header = () => {
                 <CustomLink to={'/reviews'}>REVIEWS</CustomLink>
                 <CustomLink to={'/dashboard'}>DASHBOARD</CustomLink>
                 <CustomLink to={'/about'}>ABOUT</CustomLink>
-                <CustomLink to={'/login'}>LOG IN</CustomLink>
+                {
+                    user?.uid ? 
+                    <button onClick={handleSignOut}>Sign Out</button> :
+                    <CustomLink to={'/login'}>LOG IN</CustomLink>
+                }
             </div>
         </nav>
     );
