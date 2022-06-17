@@ -17,6 +17,7 @@ const Header = () => {
                 <CustomLink to={'/reviews'}>REVIEWS</CustomLink>
                 <CustomLink to={'/dashboard'}>DASHBOARD</CustomLink>
                 <CustomLink to={'/about'}>ABOUT</CustomLink>
+                <h5 style={{color:'white'}}>{user?.displayName && user.displayName}</h5>
                 {
                     user?.uid ? 
                     <button onClick={handleSignOut}>Sign Out</button> :
