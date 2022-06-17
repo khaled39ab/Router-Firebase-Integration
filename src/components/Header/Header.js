@@ -22,7 +22,9 @@ const Header = () => {
                 <CustomLink to={'/'}>HOME</CustomLink>
                 <CustomLink to={'/reviews'}>REVIEWS</CustomLink>
                 <CustomLink to={'/dashboard'}>DASHBOARD</CustomLink>
-                <CustomLink to={'/about'}>ABOUT</CustomLink>
+                {
+                    user && <CustomLink to={'/about'}>ABOUT</CustomLink>
+                }
                 <h5 style={{color:'white'}}>{user?.displayName && user.displayName}</h5>
                 {
                     user?.uid ? 

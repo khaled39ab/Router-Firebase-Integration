@@ -15,7 +15,7 @@ const LogIn = () => {
     const location = useLocation();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
 
-    const from = location.state.from.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
